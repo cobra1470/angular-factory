@@ -1,0 +1,16 @@
+.select-language .wrapper-handle-select{
+    display: flex;
+    align-items: center;
+}
+.select-language .select{
+    float: right;
+}
+.select-language .select-full-column{
+    float: none;
+    flex: 1;
+}
+.select-language .tips{
+    flex: 1;
+    padding: 0 10px;
+    text-align: right;
+}

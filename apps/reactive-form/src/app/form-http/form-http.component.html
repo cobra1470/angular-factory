@@ -1,0 +1,39 @@
+<div class="wrapper-form-http">
+  <form [formGroup]="heroForm">
+    <div class="module-input">
+      <label
+        for="hero-url"
+        class="label">Hero Url:</label>
+      <input
+        type="text"
+        class="input"
+        autocomplete="off"
+        formControlName="heroUrl">
+    </div>
+    <div class="module-input">
+      <label
+        for="name"
+        class="label">Name:</label>
+      <input
+        type="text"
+        class="input"
+        autocomplete="off"
+        formControlName="name">
+    </div>
+    <div class="module-input">
+      <label for="date" class="label">Date:</label>
+      <input
+        type="text"
+        class="input"
+        autocomplete="off"
+        formControlName="date">
+    </div>
+    <div class="module-input">
+      <input type="checkbox" formControlName="isMain"> Is main hero.
+    </div>
+    <div class="wrapper-handle">
+      <button type="button" (click)="getHeroInfo()">Get Info</button>
+      <button type="button" (click)="updatHeroInfo()">Update Info</button>
+    </div>
+  </form>
+</div>

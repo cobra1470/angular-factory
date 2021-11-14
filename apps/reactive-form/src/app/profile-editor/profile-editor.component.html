@@ -1,0 +1,90 @@
+<div class="wrapper-profile-editor">
+  <form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="module-input">
+      <label
+        for="first-name"
+        class="label">First Name:</label>
+      <input
+        type="text"
+        id="first-name"
+        class="input"
+        formControlName="firstName"
+        autocomplete="off"
+        required>
+    </div>
+    <div class="module-input">
+      <label
+        for="last-name"
+        class="label">Last Name:</label>
+      <input
+        type="text"
+        id="last-name"
+        class="input"
+        formControlName="lastName"
+        autocomplete="off">
+    </div>
+    <div formGroupName="address">
+      <h2 class="sub-form-title">Address</h2>
+      <div class="module-input">
+        <label
+          class="label"
+          for="street">Street:</label>
+        <input
+          type="text"
+          id="street"
+          class="input"
+          formControlName="street"
+          autocomplete="off">
+      </div>
+      <div class="module-input">
+        <label
+          class="label"
+          for="city">City:</label>
+        <input
+          type="text"
+          id="city"
+          class="input"
+          formControlName="city"
+          autocomplete="off">
+      </div>
+      <div class="module-input">
+        <label
+          class="label"
+          for="state">State:</label>
+        <input
+          type="text"
+          id="state"
+          class="input"
+          formControlName="state"
+          autocomplete="off">
+      </div>
+      <div class="module-input">
+        <label
+          class="label"
+          for="zipCode">Zip Code:</label>
+        <input
+          type="text"
+          id="zipCode"
+          class="input"
+          formControlName="zipCode"
+          autocomplete="off">
+      </div>
+    </div>
+    <div>
+      <h2 class="sub-form-title">Select Language</h2>
+      <div class="module-input">
+        <!-- <app-webx-select-language
+          tips="Please select lang."
+          (changeLang)="changeLang($event.value)">
+          <p>Selected Lang: {{ profileForm.value.lang }}</p>
+        </app-webx-select-language> -->
+      </div>
+    </div>
+
+    <div class="wrapper-handle">
+      <p>Complete the form to enable button.</p>
+      <button type="button" (click)="updateProfile()">Update Profile</button>
+      <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,372 @@
+{
+  "version": 1,
+  "projects": {
+    "default": {
+      "projectType": "application",
+      "root": "apps/default",
+      "sourceRoot": "apps/default/src",
+      "prefix": "default-angular-factory",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/default",
+            "index": "apps/default/src/index.html",
+            "main": "apps/default/src/main.ts",
+            "polyfills": "apps/default/src/polyfills.ts",
+            "tsConfig": "apps/default/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/default/src/favicon.ico",
+              "apps/default/src/assets"
+            ],
+            "styles": ["apps/default/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/default/src/environments/environment.ts",
+                  "with": "apps/default/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "default:build:production"
+            },
+            "development": {
+              "browserTarget": "default:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "default:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/default/src/**/*.ts",
+              "apps/default/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/default"],
+          "options": {
+            "jestConfig": "apps/default/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "default-e2e": {
+      "root": "apps/default-e2e",
+      "sourceRoot": "apps/default-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/default-e2e/cypress.json",
+            "devServerTarget": "default:serve:development",
+            "tsConfig": "apps/default-e2e/tsconfig.json"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "default:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/default-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["default"]
+    },
+    "example-filed": {
+      "projectType": "application",
+      "root": "apps/example-filed",
+      "sourceRoot": "apps/example-filed/src",
+      "prefix": "default-angular-factory",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/example-filed",
+            "index": "apps/example-filed/src/index.html",
+            "main": "apps/example-filed/src/main.ts",
+            "polyfills": "apps/example-filed/src/polyfills.ts",
+            "tsConfig": "apps/example-filed/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/example-filed/src/favicon.ico",
+              "apps/example-filed/src/assets"
+            ],
+            "styles": ["apps/example-filed/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/example-filed/src/environments/environment.ts",
+                  "with": "apps/example-filed/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "example-filed:build:production"
+            },
+            "development": {
+              "browserTarget": "example-filed:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "example-filed:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/example-filed/src/**/*.ts",
+              "apps/example-filed/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/example-filed"],
+          "options": {
+            "jestConfig": "apps/example-filed/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "example-filed-e2e": {
+      "root": "apps/example-filed-e2e",
+      "sourceRoot": "apps/example-filed-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/example-filed-e2e/cypress.json",
+            "devServerTarget": "example-filed:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "example-filed:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/example-filed-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["example-filed"]
+    },
+    "reactive-form": {
+      "projectType": "application",
+      "root": "apps/reactive-form",
+      "sourceRoot": "apps/reactive-form/src",
+      "prefix": "default-angular-factory",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/reactive-form",
+            "index": "apps/reactive-form/src/index.html",
+            "main": "apps/reactive-form/src/main.ts",
+            "polyfills": "apps/reactive-form/src/polyfills.ts",
+            "tsConfig": "apps/reactive-form/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/reactive-form/src/favicon.ico",
+              "apps/reactive-form/src/assets"
+            ],
+            "styles": ["apps/reactive-form/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/reactive-form/src/environments/environment.ts",
+                  "with": "apps/reactive-form/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "reactive-form:build:production"
+            },
+            "development": {
+              "browserTarget": "reactive-form:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "reactive-form:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/reactive-form/src/**/*.ts",
+              "apps/reactive-form/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/reactive-form"],
+          "options": {
+            "jestConfig": "apps/reactive-form/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "reactive-form-e2e": {
+      "root": "apps/reactive-form-e2e",
+      "sourceRoot": "apps/reactive-form-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/reactive-form-e2e/cypress.json",
+            "devServerTarget": "reactive-form:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "reactive-form:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/reactive-form-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["reactive-form"]
+    }
+  }
+}

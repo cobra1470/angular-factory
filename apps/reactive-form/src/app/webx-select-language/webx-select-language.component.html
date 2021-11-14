@@ -1,0 +1,17 @@
+<div class="select-language">
+  <div class="wrapper-handle-select">
+    <div class="tips" *ngIf="tips">{{ tips }}</div>
+    <select
+      class="select"
+      [class]="{'select-full-column': !tips}"
+      name="language"
+      id="language"
+      [(ngModel)]="currentLang"
+      (change)="changeSelect()">
+      <option [value]="lang.value" *ngFor="let lang of options">{{ lang.label }}</option>
+    </select>
+  </div>
+  <div class="wrapper-content">
+    <ng-content></ng-content>
+  </div>
+</div>

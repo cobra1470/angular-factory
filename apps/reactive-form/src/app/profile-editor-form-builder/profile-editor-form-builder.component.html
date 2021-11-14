@@ -1,0 +1,111 @@
+<div class="wrapper-profile-editor-form-builder">
+  <form action="" [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+    <div class="module-input">
+      <label
+        for="first-name"
+        class="label">First Name:</label>
+      <input
+        type="text"
+        id="first-name"
+        class="input"
+        formControlName="firstName"
+        autocomplete="off"
+        [attr.disabled]="true">
+      <div class="alert-danger" *ngIf="firstName?.invalid && (firstName?.dirty || firstName?.touched)">
+        <div *ngIf="firstName?.errors?.required">
+          First Name is required !
+        </div>
+        <div *ngIf="firstName?.errors?.minlength">
+          First Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="firstName?.errors?.forbiddenName">
+          First Name can not be 'cobra' .
+        </div>
+      </div>
+    </div>
+    <div class="module-input">
+      <label
+        for="last-name"
+        class="label">Last Name:</label>
+      <input
+        type="text"
+        id="last-name"
+        class="input"
+        formControlName="lastName"
+        autocomplete="off">
+      <div class="alert-danger" *ngIf="lastName?.invalid && (lastName?.dirty || lastName?.touched)">
+        Last Name is required !
+      </div>
+    </div>
+    <div formGroupName="address">
+      <h2 class="sub-form-title">Address</h2>
+      <div class="module-input">
+        <label
+          class="label"
+          for="street">Street:</label>
+        <input
+          type="text"
+          id="street"
+          class="input"
+          formControlName="street"
+          autocomplete="off">
+      </div>
+      <div class="module-input">
+        <label
+          class="label"
+          for="city">City:</label>
+        <input
+          type="text"
+          id="city"
+          class="input"
+          formControlName="city"
+          autocomplete="off">
+      </div>
+      <div class="module-input">
+        <label
+          class="label"
+          for="state">State:</label>
+        <input
+          type="text"
+          id="state"
+          class="input"
+          formControlName="state"
+          autocomplete="off">
+      </div>
+      <div class="module-input">
+        <label
+          class="label"
+          for="zipCode">Zip Code:</label>
+        <input
+          type="text"
+          id="zipCode"
+          class="input"
+          formControlName="zipCode"
+          autocomplete="off">
+      </div>
+    </div>
+    <div formArrayName="aliases">
+      <h2 class="sub-form-title">Aliases</h2>
+      <button type="button" (click)="addAilas()">+ Add another alias</button>
+      <div
+        class="module-input"
+        *ngFor="let alias of aliases?.controls; let i=index">
+        <label for="alias-{{ i }}" class="label">Alias:</label>
+        <input
+          type="text"
+          class="input"
+          id="alias-{{ i }}"
+          [formControlName]="i"
+          autocomplete="off">
+      </div>
+    </div>
+    <div class="wrapper-handle">
+      <p>Complete the form to enable button.</p>
+      <button type="button" (click)="updateProfile()">Update Profile</button>
+      <p>Form Value: {{ formValue }}</p>
+      
+      <p>Form Status: {{ profileForm.status }}</p>
+      <button type="submit" *ngIf="submitVisible" [disabled]="!profileForm.valid">Submit</button>
+    </div>
+  </form>
+</div>
