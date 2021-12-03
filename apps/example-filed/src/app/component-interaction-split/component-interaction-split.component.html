@@ -1,0 +1,21 @@
+<div class="component-interaction-split-container">
+  <p>This is parent container</p>
+  <form action="" [formGroup]="interactionForm">
+    <factory-interaction-split-default-options
+      #defaultOptions
+      [group]="interactionForm.controls['defaultOptions']"
+      [educationOptins]="educationOptins"
+      (valueChanges)="handleEmitter()"
+    >
+    </factory-interaction-split-default-options>
+    <factory-interaction-split-section-a
+      #sectionA
+      [group]="interactionForm.controls['sectionA']"
+      (valueChanges)="handleEmitter()"
+    ></factory-interaction-split-section-a>
+    <div class="handle-bar" *ngIf="isSaveBarOpened">
+      <button type="button" class="btn btn-cancel" (click)="toggleSaveBar()">Cancel</button>
+      <button type="button" class="btn btn-submit" (click)="submitForm()">Save</button>
+    </div>
+  </form>
+</div>

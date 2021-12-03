@@ -1,0 +1,14 @@
+<div class="component-interaction-transfer-container">
+  <p>This is main container</p>
+  <form action="" [formGroup]="interactionForm">
+    <factory-interaction-transfer-default-options
+      [group]="interactionForm.controls['defaultOptions']"
+      [educationOptins]="educationOptins"></factory-interaction-transfer-default-options>
+    <factory-interaction-transfer-section-a
+      [group]="interactionForm.controls['sectionA']"></factory-interaction-transfer-section-a>
+    <div class="handle-bar" *ngIf="isSaveBarOpened">
+      <button type="button" class="btn btn-cancel" (click)="toggleSaveBar()">Cancel</button>
+      <button type="button" class="btn btn-submit" (click)="submitForm()">Save</button>
+    </div>
+  </form>
+</div>

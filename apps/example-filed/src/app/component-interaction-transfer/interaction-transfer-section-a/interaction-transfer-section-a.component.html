@@ -1,0 +1,21 @@
+<div class="interaction-transfer-section-a-container" [formGroup]="group">
+  <div class="module-input">
+    <label
+      class="label"
+      for="address">Address:</label>
+    <input
+      type="text"
+      class="input"
+      id="address"
+      autocomplete="off"
+      formControlName="address" />
+  </div>
+  <div class="module-input">
+    <label for="mainContact" class="label">Main contact:</label>
+    <div class="input-container">
+      <label for="mainContact">
+        <input type="checkbox" id="mainContact" formControlName="mainContact" />Set as main contact person
+      </label>
+    </div>
+  </div>
+</div>

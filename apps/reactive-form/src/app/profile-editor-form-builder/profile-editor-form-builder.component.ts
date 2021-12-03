@@ -44,7 +44,7 @@ export class ProfileEditorFormBuilderComponent implements OnInit {
   addAilas():void {
     this.aliases.push(this.formBuilder.control(''));
   }
-
+  // 主动触发 form 验证
   validForm():void {
     for (const i in this.profileForm.controls) {
       if (this.profileForm.controls.hasOwnProperty(i)) {

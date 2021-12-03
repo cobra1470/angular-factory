@@ -1,0 +1,47 @@
+<div class="interaction-split-default-options-container">
+  <form action="" [formGroup]="formGroupData">
+    <div class="module-input">
+      <label
+        for="full-name"
+        class="label">Full Name:</label>
+      <input
+        type="text"
+        id="full-name"
+        class="input"
+        autocomplete="off"
+        formControlName="fullName">
+      <div class="alert-danger" *ngIf="fullName?.invalid && (fullName?.dirty || fullName?.touched)">
+        <div *ngIf="fullName?.errors?.required">
+          First Name is required !
+        </div>
+      </div>
+    </div>
+    <div class="module-input">
+      <label for="gender" class="label">Gender:</label>
+      <div class="input-container">
+        <label for="gender-0">
+          <input
+            type="radio"
+            id="gender-0"
+            name="gender"
+            formControlName="gender"
+            value="0">Male
+        </label>
+        <label for="gender-1">
+          <input
+            type="radio"
+            id="gender-1"
+            name="gender"
+            formControlName="gender"
+            value="1">Female
+        </label>
+      </div>
+    </div>
+    <div class="module-input">
+      <label class="label">Hightest education:</label>
+      <select class="select" formControlName="hightestEducation">
+        <option *ngFor="let item of educationOptins" [value]="item.value">{{ item.label }}</option>
+      </select>
+    </div>
+  </form>
+</div>

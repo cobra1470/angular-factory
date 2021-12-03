@@ -1,0 +1,41 @@
+<div class="interaction-transfer-default-options-container" [formGroup]="group">
+  <div class="module-input">
+    <label
+      for="full-name"
+      class="label">Full Name:</label>
+    <input
+      type="text"
+      id="full-name"
+      class="input"
+      autocomplete="off"
+      formControlName="fullName">
+  </div>
+  <div class="module-input">
+    <label for="gender" class="label">Gender:</label>
+    <div class="input-container">
+      <label for="gender-0">
+        <input
+          type="radio"
+          id="gender-0"
+          name="gender"
+          formControlName="gender"
+          value="0">Male
+      </label>
+      <label for="gender-1">
+        <input
+          type="radio"
+          id="gender-1"
+          name="gender"
+          formControlName="gender"
+          value="1">Female
+      </label>
+    </div>
+  </div>
+  <div class="module-input">
+    <label class="label">Hightest education:</label>
+    <select class="select" formControlName="hightestEducation">
+      {{ educationOptins }}
+      <option *ngFor="let item of educationOptins" [value]="item.value">{{ item.label }}</option>
+    </select>
+  </div>
+</div>

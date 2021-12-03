@@ -1,0 +1,32 @@
+.component-interaction-split-container{
+  .handle-bar{
+    padding: 10px;
+    text-align: right;
+    background-color: #064157;
+    transition: all .4s;
+    .btn{
+      display: inline-block;
+      padding: 5px 10px;
+      margin-right: 0;
+      margin-left: 15px;
+      border-radius: 14px;
+      border: 1px solid #fff;
+      background: #fff;
+      cursor: pointer;
+      transition: all .4s;
+    }
+    .btn-cancel{
+      background: none;
+      color: #fff;
+    }
+    .btn-cancel:hover{
+      background-color: #949494;
+      border-color: #949494;
+    }
+    .btn-submit:hover{
+      background-color: #ededed;
+      border-color: #ededed;
+    }
+  }
+  
+}

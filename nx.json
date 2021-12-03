@@ -1,5 +1,5 @@
 {
-  "npmScope": "default-angular-factory",
+  "npmScope": "factory",
   "affected": {
     "defaultBase": "master"
   },
