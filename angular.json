@@ -368,6 +368,128 @@
       "tags": [],
       "implicitDependencies": ["example-filed"]
     },
+    "learn-rxjs": {
+      "projectType": "application",
+      "root": "apps/learn-rxjs",
+      "sourceRoot": "apps/learn-rxjs/src",
+      "prefix": "factory",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/apps/learn-rxjs",
+            "index": "apps/learn-rxjs/src/index.html",
+            "main": "apps/learn-rxjs/src/main.ts",
+            "polyfills": "apps/learn-rxjs/src/polyfills.ts",
+            "tsConfig": "apps/learn-rxjs/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/learn-rxjs/src/favicon.ico",
+              "apps/learn-rxjs/src/assets"
+            ],
+            "styles": ["apps/learn-rxjs/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/learn-rxjs/src/environments/environment.ts",
+                  "with": "apps/learn-rxjs/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "learn-rxjs:build:production"
+            },
+            "development": {
+              "browserTarget": "learn-rxjs:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "learn-rxjs:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/learn-rxjs/src/**/*.ts",
+              "apps/learn-rxjs/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/learn-rxjs"],
+          "options": {
+            "jestConfig": "apps/learn-rxjs/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "learn-rxjs-e2e": {
+      "root": "apps/learn-rxjs-e2e",
+      "sourceRoot": "apps/learn-rxjs-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/learn-rxjs-e2e/cypress.json",
+            "devServerTarget": "learn-rxjs:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "learn-rxjs:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["apps/learn-rxjs-e2e/**/*.{js,ts}"]
+          }
+        }
+      },
+      "tags": [],
+      "implicitDependencies": ["learn-rxjs"]
+    },
     "reactive-form": {
       "projectType": "application",
       "root": "apps/reactive-form",
