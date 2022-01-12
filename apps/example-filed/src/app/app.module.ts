@@ -12,6 +12,7 @@ import { InteractionTransferSectionAComponent } from './component-interaction-tr
 import { ComponentInteractionSplitComponent } from './component-interaction-split/component-interaction-split.component';
 import { InteractionSplitDefaultOptionsComponent } from './component-interaction-split/interaction-split-default-options/interaction-split-default-options.component';
 import { InteractionSplitSectionAComponent } from './component-interaction-split/interaction-split-section-a/interaction-split-section-a.component';
+import { FormArrayComponent } from './form-array/form-array.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { InteractionSplitSectionAComponent } from './component-interaction-split
     ComponentInteractionSplitComponent,
     InteractionSplitDefaultOptionsComponent,
     InteractionSplitSectionAComponent,
+    FormArrayComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +43,10 @@ import { InteractionSplitSectionAComponent } from './component-interaction-split
       {
         path: 'component-interaction-split',
         component: ComponentInteractionSplitComponent
+      },
+      {
+        path: 'form-array',
+        component: FormArrayComponent
       },
     ], { initialNavigation: 'enabledBlocking' }),
   ],
