@@ -15,7 +15,7 @@ export class ProfileEditorFormBuilderComponent implements OnInit {
   ) {
   }
 
-  public submitVisible: boolean = false;
+  public submitVisible = false;
   public profileForm = this.formBuilder.group({
     firstName: ['',
       [

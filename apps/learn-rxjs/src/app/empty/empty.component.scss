@@ -1,0 +1,28 @@
+:host {
+  .empty-box{
+    width: 120px;
+  }
+
+  .handle-box{
+    display: flex;
+
+    .button{
+      display: block;
+      padding: 3px 6px;
+      flex: 1;
+      cursor: pointer;
+    }
+
+    .button:first-child{
+      margin-right: 10px;
+    }
+  }
+
+  #remaining{
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid gray;
+    text-align: center;
+    border-radius: 3px;
+  }
+}

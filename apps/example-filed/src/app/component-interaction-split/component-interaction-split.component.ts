@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class ComponentInteractionSplitComponent implements OnInit {
   public interactionForm: any;
-  public isSaveBarOpened: boolean = false;
+  public isSaveBarOpened = false;
   public educationOptins: Array<any> = [];
   @ViewChild('defaultOptions') defaultOptions: any;
   @ViewChild('sectionA') sectionA: any;
