@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.item-console {
+  display: flex;
+  align-items: center;
+
+  .arrow{
+    padding: 0 5px;
+    color: gray;
+  }
+
+  .value{
+    color: blue;
+
+    &.error{
+      color: red;
+    }
+  }
+}

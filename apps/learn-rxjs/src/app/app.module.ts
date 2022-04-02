@@ -4,22 +4,31 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { CombineAllComponent } from './combine-all/combine-all.component';
 import { CombineLatestComponent } from './combine-latest/combine-latest.component';
-import { ConcatComponent } from './concat/concat.component';
 import { ConcatAllComponent } from './concat-all/concat-all.component';
+import { ConcatComponent } from './concat/concat.component';
+import { CreateComponent } from './create/create.component';
+import { DefaultIfEmptyComponent } from './default-if-empty/default-if-empty.component';
+import { EmptyComponent } from './empty/empty.component';
+import { EveryComponent } from './every/every.component';
 import { ForkJoinComponent } from './fork-join/fork-join.component';
-import { SwitchMapComponent } from './switch-map/switch-map.component';
-import { MergeComponent } from './merge/merge.component';
+import { FromEventComponent } from './from-event/from-event.component';
+import { FromPromiseComponent } from './from-promise/from-promise.component';
+import { FromComponent } from './from/from.component';
 import { MergeAllComponent } from './merge-all/merge-all.component';
-import { ReturnObservableComponent } from './return-observable/return-observable.component';
+import { MergeComponent } from './merge/merge.component';
+import { OfComponent } from './of/of.component';
 import { pairwiseComponent } from './pairwise/pairwise.component';
 import { RaceComponent } from './race/race.component';
+import { ReturnObservableComponent } from './return-observable/return-observable.component';
 import { StartWithComponent } from './start-with/start-with.component';
+import { SwitchMapComponent } from './switch-map/switch-map.component';
 import { WithLatestFromComponent } from './with-latest-from/with-latest-from.component';
 import { ZipComponent } from './zip/zip.component';
-import { DefaultIfEmptyComponent } from './default-if-empty/default-if-empty.component';
-import { EveryComponent } from './every/every.component';
-import { CreateComponent } from './create/create.component';
-import { EmptyComponent } from './empty/empty.component';
+import { RangeComponent } from './range/range.component';
+import { ThrowComponent } from './throw/throw.component';
+import { TimerComponent } from './timer/timer.component';
+import { CatchErrorComponent } from './catch-error/catch-error.component';
+import { RetryComponent } from './retry/retry.component';
 
 @NgModule({
   declarations: [		
@@ -41,7 +50,16 @@ import { EmptyComponent } from './empty/empty.component';
     DefaultIfEmptyComponent,
     EveryComponent,
     CreateComponent,
-    EmptyComponent
+    EmptyComponent,
+    FromComponent,
+    FromEventComponent,
+    FromPromiseComponent,
+    OfComponent,
+    RangeComponent,
+    ThrowComponent,
+    TimerComponent,
+    CatchErrorComponent,
+    RetryComponent
    ],
   imports: [
     BrowserModule,
@@ -117,6 +135,42 @@ import { EmptyComponent } from './empty/empty.component';
       {
         path: 'empty',
         component: EmptyComponent
+      },
+      {
+        path: 'from',
+        component: FromComponent
+      },
+      {
+        path: 'from-event',
+        component: FromEventComponent
+      },
+      {
+        path: 'from-promise',
+        component: FromPromiseComponent
+      },
+      {
+        path: 'of',
+        component: OfComponent
+      },
+      {
+        path: 'range',
+        component: RangeComponent
+      },
+      {
+        path: 'throw',
+        component: ThrowComponent
+      },
+      {
+        path: 'timer',
+        component: TimerComponent
+      },
+      {
+        path: 'catch-error',
+        component: CatchErrorComponent
+      },
+      {
+        path: 'retry',
+        component: RetryComponent
       },
     ], { initialNavigation: 'enabledBlocking' }),
   ],
