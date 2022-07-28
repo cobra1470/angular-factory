@@ -29,6 +29,11 @@ import { ThrowComponent } from './throw/throw.component';
 import { TimerComponent } from './timer/timer.component';
 import { CatchErrorComponent } from './catch-error/catch-error.component';
 import { RetryComponent } from './retry/retry.component';
+import { RetryWhenComponent } from './retry-when/retry-when.component';
+import { PublishComponent } from './publish/publish.component';
+import { DebounceTimeComponent } from './debounce-time/debounce-time.component';
+import { WindowComponent } from './window/window.component';
+import { TapComponent } from './tap/tap.component';
 
 @NgModule({
   declarations: [		
@@ -59,7 +64,12 @@ import { RetryComponent } from './retry/retry.component';
     ThrowComponent,
     TimerComponent,
     CatchErrorComponent,
-    RetryComponent
+    RetryComponent,
+    RetryWhenComponent,
+    PublishComponent,
+    DebounceTimeComponent,
+    WindowComponent,
+    TapComponent
    ],
   imports: [
     BrowserModule,
@@ -171,6 +181,26 @@ import { RetryComponent } from './retry/retry.component';
       {
         path: 'retry',
         component: RetryComponent
+      },
+      {
+        path: 'retry-when',
+        component: RetryWhenComponent
+      },
+      {
+        path: 'publish',
+        component: PublishComponent
+      },
+      {
+        path: 'debounce-time',
+        component: DebounceTimeComponent
+      },
+      {
+        path: 'window',
+        component: WindowComponent
+      },
+      {
+        path: 'tap',
+        component: TapComponent
       },
     ], { initialNavigation: 'enabledBlocking' }),
   ],
