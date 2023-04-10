@@ -1,5 +1,4 @@
 {
-  "version": 1,
   "projects": {
     "default": {
       "projectType": "application",
@@ -734,5 +733,6 @@
       "tags": [],
       "implicitDependencies": ["reactive-form"]
     }
-  }
+  },
+  "version": 1
 }
