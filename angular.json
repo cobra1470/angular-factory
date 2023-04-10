@@ -94,35 +94,6 @@
       },
       "tags": []
     },
-    "default-e2e": {
-      "root": "apps/default-e2e",
-      "sourceRoot": "apps/default-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/default-e2e/cypress.json",
-            "devServerTarget": "default:serve:development",
-            "tsConfig": "apps/default-e2e/tsconfig.json"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "default:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/default-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["default"]
-    },
     "e-commerce-website": {
       "projectType": "application",
       "root": "apps/e-commerce-website",
@@ -216,34 +187,6 @@
         }
       },
       "tags": []
-    },
-    "e-commerce-website-e2e": {
-      "root": "apps/e-commerce-website-e2e",
-      "sourceRoot": "apps/e-commerce-website-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/e-commerce-website-e2e/cypress.json",
-            "devServerTarget": "e-commerce-website:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "e-commerce-website:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/e-commerce-website-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["e-commerce-website"]
     },
     "example-filed": {
       "projectType": "application",
@@ -339,34 +282,6 @@
       },
       "tags": []
     },
-    "example-filed-e2e": {
-      "root": "apps/example-filed-e2e",
-      "sourceRoot": "apps/example-filed-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/example-filed-e2e/cypress.json",
-            "devServerTarget": "example-filed:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "example-filed:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/example-filed-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["example-filed"]
-    },
     "learn-ngrx": {
       "projectType": "application",
       "root": "apps/learn-ngrx",
@@ -460,34 +375,6 @@
         }
       },
       "tags": []
-    },
-    "learn-ngrx-e2e": {
-      "root": "apps/learn-ngrx-e2e",
-      "sourceRoot": "apps/learn-ngrx-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/learn-ngrx-e2e/cypress.json",
-            "devServerTarget": "learn-ngrx:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "learn-ngrx:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/learn-ngrx-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["learn-ngrx"]
     },
     "learn-rxjs": {
       "projectType": "application",
@@ -583,34 +470,6 @@
       },
       "tags": []
     },
-    "learn-rxjs-e2e": {
-      "root": "apps/learn-rxjs-e2e",
-      "sourceRoot": "apps/learn-rxjs-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/learn-rxjs-e2e/cypress.json",
-            "devServerTarget": "learn-rxjs:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "learn-rxjs:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/learn-rxjs-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["learn-rxjs"]
-    },
     "reactive-form": {
       "projectType": "application",
       "root": "apps/reactive-form",
@@ -704,34 +563,6 @@
         }
       },
       "tags": []
-    },
-    "reactive-form-e2e": {
-      "root": "apps/reactive-form-e2e",
-      "sourceRoot": "apps/reactive-form-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/reactive-form-e2e/cypress.json",
-            "devServerTarget": "reactive-form:serve:development"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "reactive-form:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["apps/reactive-form-e2e/**/*.{js,ts}"]
-          }
-        }
-      },
-      "tags": [],
-      "implicitDependencies": ["reactive-form"]
     }
   },
   "version": 1
