@@ -1,0 +1,27 @@
+<div class="rounded shadow">
+  <h2>Component C</h2>
+  <div class="item-shared-data">
+    <label>Shared By Subject:</label>
+    <ng-container *ngIf="!sharedDataArray.length">--</ng-container>
+    <ul>
+      <li *ngFor="let item of sharedDataArray">{{ item }}</li>
+    </ul>
+  </div>
+  <div class="item-shared-data">
+    <label>Shared By BehaviorSubject:</label>
+    <ul>
+      <li *ngFor="let item of behaviorSubjectArray">{{ item }}</li>
+    </ul>
+  </div>
+  <div class="item-shared-data">
+    <label>Shared By ReplaySubject:</label>
+    <ng-container *ngIf="!replaySubjectArray.length">--</ng-container>
+    <ul>
+      <li *ngFor="let item of replaySubjectArray">{{ item }}</li>
+    </ul>
+  </div>
+  <div class="item-shared-data">
+    <label>Shared By AsyncSubject:</label>
+    {{ asyncSubjectData || '--' }}
+  </div>
+</div>

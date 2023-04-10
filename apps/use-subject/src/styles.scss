@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  color: rgba(55, 65, 81, 1);
+}
+
+h4 {
+  margin: 1rem 0;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+label {
+  font-weight: 600;
+}
+
+ul {
+  margin-top: 0.5rem;
+}
+
+.rounded {
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+.shadow {
+  box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.grid-content {
+  display: grid;
+  grid-gap: 4rem;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 3rem;
+}
+
+.item-shared-data {
+  margin: 1rem;
+}
