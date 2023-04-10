@@ -6,6 +6,9 @@
 /out-tsc
 
 # dependencies
+.angular/cache
+.cache
+.cache-loader
 /node_modules
 
 # IDEs and editors
@@ -18,11 +21,7 @@
 *.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode
 
 # misc
 /.sass-cache
