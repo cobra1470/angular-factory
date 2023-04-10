@@ -1,0 +1,10 @@
+<h2>Oliver Sacks Books Collection</h2>
+<factory-book-list
+  [books]="(books$ | async)!"
+  (add)="onAdd($event)"
+></factory-book-list>
+<factory-book-collection
+  class="book-collection"
+  [books]="(bookCollection$ | async)!"
+  (remove)="onRemove($event)"
+></factory-book-collection>

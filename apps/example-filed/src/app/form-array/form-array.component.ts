@@ -72,7 +72,7 @@ export class FormArrayComponent implements OnInit {
     ]
 
     const list1 = new FormArray([]);
-    list1.push(new FormControl(_arr[0]));
+    // list1.push(new FormControl(_arr[0]));
     (this.siteOptionsForm.get('liveStreaming') as FormGroup).setControl('siteStreamProviderList', list1)
 
     this.siteOptionsForm.setControl('siteStreamProviderList', list1)
